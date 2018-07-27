@@ -20,8 +20,8 @@ import App from './containers/App';
 import registerServiceWorker from './utils/registerServiceWorker';
 import packageJSON from '../package.json';
 import './style/index.css';
-console.log (`${packageJSON.name} ${packageJSON.version}`);
-
+console.log (`${ packageJSON.name } ${ packageJSON.version }`);
+console.log (`${ packageJSON.url } `);
 const store = configureStore();
 const persistor = persistStore(store);
 const theme = createMuiTheme( muiTheme );
