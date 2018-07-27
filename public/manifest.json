@@ -1,15 +1,60 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Listingslab",
+  "name": "Listingslab Progressive Web Apps",
+  "theme_color": "#23476b",
+  "background_color": "#2e6291",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "index.html",
+  "splash_pages": null,
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "png/72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "png/96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "png/128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+
+      "src": "png/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "png/152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+
+      "src": "png/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "png/384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "png/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "png/1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
     }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
