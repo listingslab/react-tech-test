@@ -1,8 +1,8 @@
 {
   "name": "react-tech-test",
-  "description": "To create a simple phone book application using react and redux",
+  "description": "A simple phone book application using react and redux",
   "version": "0.1.2",
-  "url": "https://",
+  "url": "https://react-tech-test.firebaseapp.com",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.4.0",
