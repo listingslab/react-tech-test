@@ -1,7 +1,7 @@
 {
   "name": "react-tech-test",
   "description": "Simple phone book app",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "url": "https://react-tech-test.firebaseapp.com",
   "private": true,
   "dependencies": {
