@@ -12,15 +12,18 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Top from '../components/Top';
-import Footer from '../components/Footer';
 import ContactList from './ContactList';
+import New from './New';
+import Edit from './Edit';
+import Delete from './Delete';
 import Contact from './Contact';
 import Grid from '@material-ui/core/Grid';
 import packageJSON from '../../package.json';
 
 const styles = theme => ({
   app: {
-    margin: theme.spacing.unit,
+    maxWidth: 800,
+    margin: 'auto'
   },
 });
 
@@ -28,38 +31,32 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={ classnames( classes.contact ) }>
+      <div className={ classnames( classes.app ) }>
+        <New />
+        <Edit />
+        <Delete />
         <Top 
           name={ `${packageJSON.name}` }
           description={ `${packageJSON.description}` } />
-          
-          <Grid container>
-
-            <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-              <ContactList />
-            </Grid>
-
-            <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
-              <Contact />
-            </Grid>
-
+        <Grid container>
+          <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
+            <Contact />
           </Grid>
-        <Footer />
+          <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+            <ContactList />
+          </Grid>
+        </Grid>
       </div>
     );
   }
 }
 
 const mapStateToProps = (store) => {
-  return { 
-    store
-  };
+  return {};
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { 
-    
-  };
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(App));
