@@ -12,7 +12,6 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Top from '../components/Top';
-import Footer from '../components/Footer';
 import ContactList from './ContactList';
 import New from './New';
 import Edit from './Edit';
@@ -39,15 +38,14 @@ class App extends Component {
         <Top 
           name={ `${packageJSON.name}` }
           description={ `${packageJSON.description}` } />
-          <Grid container>
-            <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
-              <Contact />
-            </Grid>
-            <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
-              <ContactList />
-            </Grid>
+        <Grid container>
+          <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
+            <Contact />
           </Grid>
-        <Footer />
+          <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+            <ContactList />
+          </Grid>
+        </Grid>
       </div>
     );
   }

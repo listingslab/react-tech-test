@@ -17,7 +17,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import logo from '../assets/svg/logo.svg';
+import logo from '../logo.svg';
 
 const styles = {
   top: {

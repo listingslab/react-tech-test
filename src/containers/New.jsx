@@ -40,6 +40,14 @@ const styles = theme => ({
   avatarSection:{
     marginTop: theme.spacing.unit,
   },
+  testAvatars:{
+    marginTop: theme.spacing.unit,
+    fontSize: 12
+  },
+  link:{
+    color: theme.palette.primary['300'],
+    textDecoration: 'none'
+  },
   avatar: {
     width: 125,
     height: 125
@@ -256,6 +264,16 @@ class New extends React.Component {
               <Avatar 
                 className={ classnames( classes.avatar ) }
                 src={ this.state.avatar.value } />
+
+            </div>
+            <div className={ classnames( classes.testAvatars ) }>
+              <a 
+                className={ classnames( classes.link ) }
+                href="https://raw.githubusercontent.com/listingslab/react-tech-test/master/public/test_avatars.txt"
+                target={ `_blank` }
+              >
+                Want some avatar urls to test?
+              </a>        
             </div>
           </DialogContent>
           <DialogActions>

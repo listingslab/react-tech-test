@@ -3,7 +3,15 @@
   "description": "Simple phone book app",
   "version": "0.1.4",
   "url": "https://react-tech-test.firebaseapp.com",
-  "private": true,
+  "author": {
+    "name": "Chris Dorward",
+    "email": "listingslab@gmail.com"
+  },
+  "license": "0BSD",
+    "repository": {
+    "type": "github",
+    "url": "https://github.com/listingslab/react-tech-test"
+  },
   "dependencies": {
     "@material-ui/core": "^1.4.0",
     "@material-ui/icons": "^1.1.0",
@@ -32,5 +40,12 @@
     "eslint-plugin-prettier": "^2.6.1",
     "prettier": "^1.13.7",
     "pretty-quick": "^1.6.0"
-  }
+  },
+  "keywords": [
+    "JavaScript",
+    "React",
+    "Redux",
+    "Firebase",
+    "PWA"
+  ]
 }

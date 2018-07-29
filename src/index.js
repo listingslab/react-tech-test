@@ -22,7 +22,6 @@ import packageJSON from '../package.json';
 import './style/index.css';
 
 console.log (`${ packageJSON.name } ${ packageJSON.version }`);
-// console.log (`${ packageJSON.url } `);
 
 const store = configureStore();
 const persistor = persistStore(store);
