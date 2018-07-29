@@ -8,7 +8,8 @@
  */
 
 import React from 'react';
-import { withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
+import { openNewContact } from '../redux/actions/contacts';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Avatar from '@material-ui/core/Avatar';
@@ -23,19 +24,18 @@ const styles = {
   },
   appBar: {
     flexGrow: 1,
-    // background: 'none',
-    // background: 'rgba(255, 255, 255, 0.1)',
   },
   siteInfo: {
   },
   flex: {
     flex: 1,
-    // textAlign: 'center',
     color: 'rgba(255,255,255,0.7)',
     fontSize: 11
   },
+  right: {
+    textAlign: 'right',
+  },
   logoBtn: {
-    // marginLeft: -12,
     marginRight: 20,
   },
   white:{
@@ -53,32 +53,33 @@ function Top (props) {
         className={ classnames( classes.appBar ) } 
         position="static">
         <Toolbar>
-          <IconButton 
-            className={ classnames(classes.white, classes.logoBtn) } 
-            color="default" 
-            aria-label="Home">
-            <Avatar
-              title={ `Listingslab PWA` }
-              src={ logo }
-            />
-          </IconButton>
+          
+
 
           <div className={ classnames(classes.flex) }>
-            
-            {/* 
-              <Typography 
-                className={ classnames( classes.white ) }
-                variant={ `body2` }>
-                { props.name }
-              </Typography>
-             */}
-
             <Typography 
               className={ classnames( classes.white ) }
               variant={ `body1` }>
               { props.description }
             </Typography>
           </div>
+          <div className={ classnames(classes.flex, classes.right) }>
+            <IconButton 
+              onClick={ () => {
+                window.open ("https://listingslab.com",
+                  "listingslab.com",
+                  "menubar=0, top=0, left=0, width=400, height=750"
+                );
+              }}
+              className={ classnames(classes.white, classes.logoBtn) } 
+              aria-label="Listingslab">
+              <Avatar
+                title={ `Listingslab PWA` }
+                src={ logo }
+              />
+            </IconButton>
+          </div>
+
 
         </Toolbar>
       </AppBar>
@@ -86,4 +87,18 @@ function Top (props) {
   );
 }
 
-export default withRouter(withStyles( styles )( Top ));
+const mapStateToProps = (store) => {
+  return { 
+    store
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { 
+    openNewContact: () => dispatch(openNewContact ()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Top));
+
+

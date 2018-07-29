@@ -9,136 +9,93 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateNewContact } from '../redux/actions/contacts';
+import { 
+  openNewContact, 
+  openDeleteContact, 
+  closeDeleteContact,
+  openEditContact,
+  closeEditContact
+} from '../redux/actions/contacts';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
+import ContactHeader from '../components/ContactHeader';
+import NoSelection from '../components/NoSelection';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
-// import TextField from '@material-ui/core/TextField';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import NewIcon from '@material-ui/icons/AddCircle';
+import moment from 'moment';
 
 const styles = theme => ({
   contact: {
-    margin: theme.spacing.unit,
+    minHeight: 100,
   },
+  content: {
+    color: theme.palette.primary['300'],
+    fontSize: 12
+  }
 });
 
 class Contact extends React.Component {
 
-  onFirstNameChange = event => {
-    this.props.updateNewContact ({
-      firstName: `${event.target.value}`
-    });
-  }
-  
-  onLastNameChange = event => {
-    this.props.updateNewContact ({
-      lastName: `${event.target.value}`
-    });
-  }
-  
-  onPhoneChange = event => {
-    this.props.updateNewContact ({
-      phone: `${event.target.value}`
-    });
-  }
-
-  createContact = contact => {
-    const { classes } = this.props;
-    return (
-      <div className={ classnames( classes.addNew ) }>
-        <Button 
-          variant={ `raised` }
-          color="primary"
-          onClick={() => {
-            console.log ('Add New');
-          }}>Add Contact</Button>
-      </div>
-    );
-  }
-
-  createEdit = firstName => {
-    // const { classes } = this.props;
-    return (
-      <Button 
-        key={`edit_btn`}
-        variant={ `raised` }
-        color="secondary"
-        onClick={() => {
-          console.log ('Edit');
-        }}>EDIT { firstName }</Button>
-    );
-  }
-
-  createNew = () => {
-    // const { classes } = this.props;
-    return (
-      <Button 
-        key={`new_btn`}
-        variant={ `raised` }
-        color="primary"
-        onClick={() => {
-          console.log ('NEW');
-        }}>NEW CONTACT</Button>
-    );
-
-  }
-
-  createCancelSave = payload => {
-    const { classes } = this.props;
-    return (
-      <div className={ classnames( classes.cancelSave ) }>
-        <Button
-          variant={ `raised` }
-          color="default"
-          onClick={() => {
-            console.log ('Cancel');
-          }}>Cancel</Button>
-        <Button 
-          variant={ `raised` }
-          color="primary"
-          onClick={() => {
-            console.log ('Save');
-          }}>Save</Button>
-      </div>
-    );
-  }
-
   render() {
     const { classes } = this.props;
     const { contacts } = this.props.store.contacts;
-    const { selectedContact } = this.props.store.contacts.contacts;
-    let cardContent = null;
-    let cardActions = [];
-    let avatar = `/png/avatar/avatar.png`;
-    let title = ``;
-    let subheader = ``;
-    // console.log ('contacts.selectedContact', contacts.selectedContact);
+    let header = [];
+    let content = [];
+    let actions = [];
     if ( !contacts.selectedContact ){
-      title = `Select a contact or create a new one`;
-      // cardActions = this.addNew ();
+      header.push ( 
+        <NoSelection key={ `no_selection` } />);
     } else {
-      title = `${ selectedContact.firstName } ${ selectedContact.lastName }`;
-      subheader = `${ selectedContact.phone }`;
-      avatar = `${ selectedContact.avatar }`;
-      cardActions.push ( this.createEdit( selectedContact.firstName ) );
-      cardActions.push ( this.createNew() );
+      header.push ( 
+        <ContactHeader 
+          key={ `contact_header` }
+          contactObj={ contacts.selectedContact } 
+        />);
+      content.push ( 
+        <CardContent 
+          key={ `contact_content` }
+          className={ classnames( classes.content ) }>
+          Created { moment.unix( contacts.selectedContact.created/1000 ).fromNow() }
+          , updated { moment.unix( contacts.selectedContact.updated/1000 ).fromNow() }
+        </CardContent>);
+      actions.push (
+        <CardActions key={ `contact_actions` }>
+          <IconButton 
+            aria-label="New"
+            color={ `primary` }
+            onClick={() => {
+              this.props.openNewContact();
+            }}>
+            <NewIcon />
+          </IconButton>
+          <IconButton 
+            aria-label="Edit"
+            color={ `primary` }
+            onClick={() => {
+              this.props.openEditContact( contacts.selectedContact );
+            }}>
+            <EditIcon />
+          </IconButton>
+          <IconButton 
+            aria-label="Delete"
+            color={ `primary` }
+            onClick={() => {
+              this.props.openDeleteContact( contacts.selectedContact );
+            }}>
+            <DeleteIcon />
+          </IconButton>
+        </CardActions>
+      );
     }
     return (
       <div className={ classnames( classes.contact ) }>
-        <CardActions>
-          { cardActions }
-        </CardActions>
-        <CardHeader 
-          avatar={ <Avatar src={ avatar } /> }
-          title={ `${ title }` } 
-          subheader={ `${ subheader }` } />
-        <CardContent>
-          { cardContent }
-        </CardContent>
-
+        { actions }
+        { header }     
+        { content }
       </div>
     );
   }
@@ -152,41 +109,12 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
   return { 
-    updateNewContact: ( payload ) => dispatch(updateNewContact ( payload )),
+    openNewContact: () => dispatch(openNewContact ()),
+    openDeleteContact: ( contactObj ) => dispatch(openDeleteContact ( contactObj )),
+    openEditContact: ( contactObj ) => dispatch(openEditContact ( contactObj )),
+    closeEditContact: () => dispatch(closeEditContact ()),
+    closeDeleteContact: () => dispatch(closeDeleteContact ()),
   };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Contact));
-
-/*
-<CardContent>
-  <TextField
-      required
-      fullWidth
-      onChange={ this.onFirstNameChange }
-      id={ `firstName` }
-      label={ `First name` }
-      defaultValue={ `${ newContact.firstName.value }` }
-      margin="normal"
-    />
-    <TextField
-      required
-      fullWidth
-      onChange={ this.onLastNameChange }
-      id={ `lastName` }
-      label={ `Last name` }
-      defaultValue={ `${ newContact.lastName.value }` }
-      margin="normal"
-    />
-    <TextField
-      required
-      fullWidth
-      onChange={ this.onPhoneChange }
-      type={ `number` }
-      id={ `phone` }
-      label={ `Phone` }
-      defaultValue={ `${ newContact.phone.value }` }
-      margin="normal"
-    />
-</CardContent>
-*/

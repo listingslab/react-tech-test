@@ -1,17 +1,34 @@
-# React Technical Excerise
+# react-tech-test
 
+A simple phone book application using react and redux
 
 ## Solution
 
-The devilered solution solved the brief and also offers the following power ups
+Dev Time from cloning bitbucket repo to final develop>master merge __≈ 4.5 hrs__
 
-- Hosted on firebase, leveraging all kinds of Google goodness
+Please note our solution does deviate slightly from the original brief. This is due to the constraints of completing the task in a very short time & wishing to showcase some of our current React development skills in the time allotted.
+
+This simple phonebook app offers the following power ups
+
+- It's a full Progressive web app with all the correct manifests/icons etc
+- Hosted on Google Firebase, leveraging tech like as [firestore database](https://firebase.google.com/docs/firestore/)
 - Persistant redux store (like cookies but better)
 - [Material UI](https://material-ui.com/) for quick, modern, responsive UI frameworking
+
+__Roadmap__  
+
+Further development of this app might include 
+
+- Look at importing/exporting contacts as JSON
+- Develop the contact object to use many more fields
+- Push notifications to let users know when they've been added to another's list
+
 
 ## Brief
 
 Below is the original technical test readme.
+
+# React Technical Excerise
 
 ### Phone Book
 

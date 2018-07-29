@@ -6,43 +6,73 @@
  * @repo        https://github.com/listingslab/react-tech-test
  *
  */
+ 
+import uniqid from 'uniqid';
 
 export const contacts = {
 	selectedContact: false,
 	updated: Date.now(),
-	mode: `view`,
 	newContact:{
-		isValid: false,
-		firstName:{
-			isValid: false,
-			isPristine: true,
-			value: ``
-		},
-		lastName:{
-			isValid: false,
-			isPristine: true,
-			value: ``
-		},
-		phone:{
-			isValid: false,
-			isPristine: true,
-			value: ``
-		}
+		open: false,
+	},
+	editContact:{
+		open: false,
+	},
+	deleteContact:{
+		open: false,
 	},
 	contactsList: [
 		{
-			id: `0001`,
+			id: uniqid(),
 			firstName: `Chris`,
 			lastName: `Dorward`,
 			avatar: `/png/avatar/invader.png`,
-			phone: `0434 925 699`,
+			phone: `0434925699`,
+			updated: Date.now(),
+			created: Date.now(),
 		},
 		{
-			id: `0002`,
+			id: uniqid(),
 			firstName: `Rikki`,
 			lastName: `Carmichael`,
 			phone: `+61 481 163 965`,
-			avatar: `/png/avatar/rikki.jpg`,
+			avatar: `/jpg/rikki.jpg`,
+			updated: Date.now(),
+			created: Date.now(),
+		},
+		{
+			id: uniqid(),
+			firstName: `Sir`,
+			lastName: `Terry`,
+			avatar: `/jpg/sirterry.jpg`,
+			updated: Date.now(),
+			created: Date.now(),
+		},
+		{
+			id: uniqid(),
+			firstName: `Bill`,
+			lastName: `Gates`,
+			phone: `(206) 709-3140`,
+			avatar: `/jpg/bill.jpg`,
+			updated: Date.now(),
+			created: Date.now(),
+		},
+		{
+			id: uniqid(),
+			firstName: `Bill`,
+			lastName: `Murray`,
+			avatar: `/jpg/bm.jpg`,
+			updated: Date.now(),
+			created: Date.now(),
+		},
+		{
+			id: uniqid(),
+			firstName: `Ernest`,
+			lastName: `Cline`,
+			phone: `(719) 676-4940`,
+			avatar: `/jpg/ec.jpg`,
+			updated: Date.now(),
+			created: Date.now(),
 		}
 	],
 }

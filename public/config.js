@@ -1,6 +1,6 @@
 config = {
-    "appName": "listingslab",
-    "version": "0.1.2",
+    "app": "react-tech-test",
+    "version": "0.1.3",
     "react": {
         "localhost": "http://localhost:3000",
         "prod": "https://react-tech-test.firebaseapp.com"
