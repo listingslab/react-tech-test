@@ -12,7 +12,6 @@ const contacts = (state = { }, action) => {
   switch(action.type) {
 
     case 'UPDATE_CONTACT': {
-      // console.log ('action.contactObj.id', action.contactObj.id)
       let newList = [];
       let list = state.contacts.contactsList;
       for ( let i = 0; i < list.length; i++) {

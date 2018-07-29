@@ -1,6 +1,6 @@
 config = {
     "app": "react-tech-test",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "react": {
         "localhost": "http://localhost:3000",
         "prod": "https://react-tech-test.firebaseapp.com"
