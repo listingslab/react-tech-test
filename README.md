@@ -5,6 +5,8 @@
 
 *A simple phone book application using react and redux*
 
+### [Live Demo](https://react-tech-test.firebaseapp.com/)
+
 ## Solution
 
 Dev Time from cloning bitbucket repo to final develop>master merge __≈ 4.5 hrs__
@@ -28,13 +30,9 @@ Further development of this app might include
 - Develop the contact object to use many more fields
 - Push notifications to let users know when they've been added to another's list
 
-## Brief
-
-Below is the original technical test readme.
-
 # React Technical Excerise
 
-### Phone Book
+## Phone Book
 
 Create a simple phone book application using react and redux.
 Follow the layout provided below.
@@ -97,6 +95,30 @@ Follow the layout provided below.
 - Be merged to master with a merge commit;
 - Be testable;
 - Solve the problem.
+- This repository should be private cloned and shared with techtest_au@kindredgroup.com when complete.
 
+## Setup
 
-#### OSL by Listingslab, 2018
+### Step 1:
+
+```
+npm i
+```
+
+OR
+
+```
+yarn
+```
+
+### Step 2:
+
+```
+npm run start
+```
+
+OR
+
+```
+yarn start
+```
