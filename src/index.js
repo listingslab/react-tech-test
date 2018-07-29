@@ -17,11 +17,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import muiTheme from './style/mui/themes/purple_green';
 import App from './containers/App';
-import registerServiceWorker from './utils/registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 import packageJSON from '../package.json';
 import './style/index.css';
+
 console.log (`${ packageJSON.name } ${ packageJSON.version }`);
-console.log (`${ packageJSON.url } `);
+// console.log (`${ packageJSON.url } `);
+
 const store = configureStore();
 const persistor = persistStore(store);
 const theme = createMuiTheme( muiTheme );
