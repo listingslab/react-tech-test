@@ -11,7 +11,7 @@
 
 ## Solution
 
-The devilered solution solved the brief and also offers the following power ups
+The delivered app solves the brief and also offers the following power ups
 
 - Hosted on firebase, leveraging all kinds of Google goodness
 - Persistant redux store (like cookies but better)
