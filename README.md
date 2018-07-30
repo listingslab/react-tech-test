@@ -1,40 +1,13 @@
 
 ![alt text](https://listingslab.com/png/72_b.png "Headless WordPress PWA with React")
 
-### [listingslab.com](https://listingslab.com)
+### [Firebase Demo](https://react-tech-test.firebaseapp.com/)
 
 *A simple phone book application using react and redux*
 
-## Solution
-
-Dev Time from cloning bitbucket repo to final develop>master merge __≈ 4.5 hrs__
-
-Please note our solution does deviate slightly from the original brief. This is due to the constraints of completing the task in a very short time & wishing to showcase some of our current React development skills in the time allotted.
-
-This simple phonebook app offers the following power ups
-
-- Full Progressive Web App with all the correct manifests/icons & a 87% [lighthouse audit score](https://raw.githubusercontent.com/listingslab/react-tech-test/master/public/lighthouse.json)
-- Hosted on Google Firebase, leveraging tech like as [firestore database](https://firebase.google.com/docs/firestore/)
-- Aatars
-- Persistant redux store (like cookies but better)
-- [Material UI](https://material-ui.com/) for quick, modern, responsive UI frameworking
-
-__Roadmap__  
-
-Further development of this app might include 
-
-- Look at importing/exporting contacts as JSON
-- Upload avatars
-- Develop the contact object to use many more fields
-- Push notifications to let users know when they've been added to another's list
-
-## Brief
-
-Below is the original technical test readme.
-
 # React Technical Excerise
 
-### Phone Book
+## Phone Book
 
 Create a simple phone book application using react and redux.
 Follow the layout provided below.
@@ -91,12 +64,33 @@ Follow the layout provided below.
 
 ### For a submission to be considered complete it must:
 
-- Clone the _*unibet-front-end-tech-test*_ repo.
+- Clone this _*react-tech-test*_ repo.
 - Demonstrate appropriate use of source control/ versioning;
 - Adhere to modern coding standards/ practices;
 - Be merged to master with a merge commit;
 - Be testable;
 - Solve the problem.
+- This repository should be private cloned and shared with us when complete.
 
+## Listingslab's Solution
 
-#### OSL by Listingslab, 2018
+Dev Time from cloning bitbucket repo to final develop>master merge __≈ 6.5 hrs__
+
+Please note our solution does deviate slightly from the original brief. This is due to the constraints of completing the task in a very short time & wishing to showcase some of our current React development skills in the time allotted.
+
+This simple phonebook app offers the following power ups
+
+- Full Progressive Web App with all the correct manifests/icons & a 87% [lighthouse audit score](https://raw.githubusercontent.com/listingslab/react-tech-test/master/public/lighthouse.json)
+- Hosted on Google Firebase, leveraging tech like as [firestore database](https://firebase.google.com/docs/firestore/)
+- Aatars
+- Persistant redux store (like cookies but better)
+- [Material UI](https://material-ui.com/) for quick, modern, responsive UI frameworking
+
+__Roadmap__  
+
+Further development of this app might include 
+
+- Look at importing/exporting contacts as JSON
+- Upload avatars
+- Develop the contact object to use many more fields
+- Push notifications to let users know when they've been added to another's list

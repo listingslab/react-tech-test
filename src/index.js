@@ -15,7 +15,7 @@ import { PersistGate } from 'redux-persist/es/integration/react';
 import { persistStore } from 'redux-persist';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import muiTheme from './style/mui/themes/purple_green';
+import muiTheme from './style/mui/themes/pink';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import packageJSON from '../package.json';

@@ -1,7 +1,7 @@
 {
   "name": "react-tech-test",
   "description": "Simple phone book app",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "url": "https://react-tech-test.firebaseapp.com",
   "author": {
     "name": "Chris Dorward",
